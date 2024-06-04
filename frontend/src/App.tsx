@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import NavbarLayout from "./Layouts/NavbarLayout";
+import HomeLayout from "./Layouts/HomeLayout";
 function App() {
   return (
-    <div className="">
+    <div className="flex h-screen flex-col overflow-hidden">
       <NavbarLayout />
-      <div className="h-full">
+      <div className="h-full p-2">
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/" element={<HomeLayout />} />
           <Route path="/courses/*" element={<h1>Courses</h1>} />
           <Route path="/blogs/*" element={<h1>Blogs</h1>} />
         </Routes>

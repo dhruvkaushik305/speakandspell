@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         CelticBlue: "#226CE0",
