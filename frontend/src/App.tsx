@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="flex h-screen flex-col overflow-hidden">
       <NavbarLayout />
-      <div className="h-full p-2">
+      <div className="h-full">
         <Routes>
           <Route path="/" element={<HomeLayout />} />
           <Route path="/courses/*" element={<h1>Courses</h1>} />

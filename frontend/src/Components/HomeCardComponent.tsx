@@ -11,7 +11,7 @@ const HomeCardComponent: React.FC<HomeCardComponentProps> = ({
   image,
 }) => {
   return (
-    <div className="flex items-center justify-center rounded-[3.5rem] bg-neutral-100 p-5 shadow-lg">
+    <div className="flex items-center justify-center rounded-[3.5rem] bg-neutral-100 p-10 shadow-lg">
       <div className="flex flex-col">
         <p className="text-xl font-semibold">{title}</p>
         <p className="max-w-[18rem] text-lg">{content}</p>

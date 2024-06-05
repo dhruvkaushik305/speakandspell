@@ -14,7 +14,7 @@ const AccordianComponent: React.FC<AccordianComponentProps> = ({
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex w-[85rem] flex-col p-2">
+    <div className="flex w-[95rem] flex-col p-2">
       <div
         className="flex cursor-pointer items-center justify-between"
         onClick={toggleIsOpen}
@@ -23,7 +23,7 @@ const AccordianComponent: React.FC<AccordianComponentProps> = ({
         <img
           src={isOpen ? upArrow : downArrow}
           alt="open/close arrow"
-          className="h-[1.5rem] w-[1.5rem]"
+          className="mr-4 h-[1.5rem] w-[1.5rem]"
         />
       </div>
       {isOpen && (
