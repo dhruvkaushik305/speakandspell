@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 interface NavbarLinksComponentProps {
   title: string;
 }
@@ -11,7 +11,7 @@ const NavbarLinksComponent: React.FC<NavbarLinksComponentProps> = ({
       <NavLink
         to={`/${title.toLowerCase()}`}
         className={({ isActive }) => {
-          return isActive ? "text-CelticBlue font-semibold" : "";
+          return isActive ? "font-semibold text-CelticBlue" : "";
         }}
       >
         {title}
