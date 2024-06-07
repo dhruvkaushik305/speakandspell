@@ -3,7 +3,7 @@ import React from "react";
 interface HomeCardComponentProps {
   title: string;
   content: string;
-  image: React.ReactNode;
+  image: string;
 }
 const HomeCardComponent: React.FC<HomeCardComponentProps> = ({
   title,
@@ -11,12 +11,12 @@ const HomeCardComponent: React.FC<HomeCardComponentProps> = ({
   image,
 }) => {
   return (
-    <div className="flex items-center justify-center rounded-[3.5rem] bg-neutral-100 p-10 shadow-lg">
+    <div className="flex flex-col items-center justify-center rounded-[2rem] bg-neutral-100 p-4 shadow-lg md:rounded-[3.5rem] md:p-8">
+      <img src={image} alt="illustration svg" className="size-24 md:size-36" />
       <div className="flex flex-col">
-        <p className="text-xl font-semibold">{title}</p>
-        <p className="max-w-[18rem] text-lg">{content}</p>
+        <p className="text-lg font-semibold md:text-xl">{title}</p>
+        <p className="text-md md:text-lg">{content}</p>
       </div>
-      {image}
     </div>
   );
 };

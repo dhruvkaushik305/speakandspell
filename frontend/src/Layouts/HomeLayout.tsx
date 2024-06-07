@@ -7,9 +7,9 @@ import HomeCardComponent from "../Components/HomeCardComponent";
 import AccordianComponent from "../Components/AccordianComponent";
 const HomeLayout: React.FC = () => {
   return (
-    <div className="mt-8 flex h-full flex-col items-center gap-16 overflow-y-auto overflow-x-hidden bg-white">
-      <div className="flex w-fit items-center justify-center rounded-[120px] bg-neutral-100 p-4 shadow-lg">
-        <div className="relative z-10 flex h-full items-center bg-black bg-clip-text font-Poppins text-5xl font-bold text-CelticBlue/80">
+    <div className="mt-1 flex h-full flex-col items-center gap-16 overflow-x-hidden">
+      <div className="flex w-[85%] flex-col items-center justify-center rounded-[50px] bg-neutral-100 p-4 shadow-lg md:flex-row md:rounded-[120px]">
+        <div className="relative z-10 flex h-full items-center bg-black bg-clip-text font-Poppins text-2xl font-bold text-CelticBlue/80 md:text-3xl lg:text-4xl xl:text-5xl">
           <p className="">
             Don't let bad grammar hold you back.
             <br /> Take control with our classes.
@@ -17,43 +17,47 @@ const HomeLayout: React.FC = () => {
           <img
             src={paperPlane}
             alt="paper plane"
-            className="absolute bottom-[4rem] right-[2rem] -z-10"
+            className="absolute bottom-[2rem] right-[2rem] -z-10 hidden size-[25rem]"
           />
         </div>
         <img
           src={studentsImage}
           alt="students vector image"
-          className="size-[50rem]"
+          className="size-[17rem] md:size-[25rem] lg:size-[30rem] xl:size-[45rem]"
         />
       </div>
       <div className="mx-8 flex max-w-[80%] flex-col gap-5 p-1">
-        <p className="text-center text-4xl font-semibold">Why choose us?</p>
-        <div className="flex flex-wrap justify-center gap-[5rem]">
+        <p className="text-center text-2xl font-semibold md:text-4xl">
+          Why choose us?
+        </p>
+        <div className="grid grid-cols-1 gap-5 p-3 lg:grid-cols-2 xl:gap-10">
           <HomeCardComponent
             title="Experience You Can Trust"
             content="I've been navigating the English language jungle for years, and let me tell you, I've seen it all (and corrected it all too!)."
-            image={<img src={accuracySVG} alt="an svg" className="size-36" />}
+            image={accuracySVG}
           />
           <HomeCardComponent
             title="Unlock Your Potential"
             content="Whether you need to nail that interview or write a captivating college essay, I'll equip you with the skills to conquer any communication challenge."
-            image={<img src={accuracySVG} alt="an svg" className="size-36" />}
+            image={accuracySVG}
           />
           <HomeCardComponent
             title="Learn From the Fun Side"
             content="Ditch the dull textbooks! My classes are engaging and interactive, so you'll actually enjoy learning (gasp!)."
-            image={<img src={accuracySVG} alt="an svg" className="size-36" />}
+            image={accuracySVG}
           />
           <HomeCardComponent
             title="Master ALL the Skills"
             content="From comma catastrophes to interview jitters, I cover a wide range of topics to make you a well-rounded English whiz."
-            image={<img src={accuracySVG} alt="an svg" className="size-36" />}
+            image={accuracySVG}
           />
         </div>
       </div>
       <div className="flex max-w-[80%] flex-col gap-5">
-        <header className="text-center text-4xl font-semibold">FAQ</header>
-        <div className="flex w-full flex-col gap-1 rounded-xl bg-neutral-100 p-3">
+        <header className="text-center text-2xl font-semibold md:text-4xl">
+          FAQ
+        </header>
+        <div className="flex w-full flex-col gap-1 rounded-xl bg-neutral-100 p-1 md:p-3">
           <AccordianComponent
             title="What topics do your courses cover?"
             content="We offer a wide range of English language courses to suit various needs, from grammar fundamentals and interview preparation to creative writing and handwriting improvement."
@@ -80,13 +84,13 @@ const HomeLayout: React.FC = () => {
           />
         </div>
       </div>
-      <div className="flex max-w-[80%] items-center justify-center gap-1 rounded-[4rem] bg-neutral-100 p-4">
-        <div className="flex flex-col gap-5 p-2">
-          <p className="text-4xl font-semibold">
+      <div className="flex max-w-[85%] flex-col-reverse items-center justify-center gap-1 rounded-[2rem] bg-neutral-100 p-4 md:flex-row md:rounded-[4rem]">
+        <div className="flex flex-col gap-3 p-1 md:gap-5 md:p-2">
+          <p className="text-2xl font-semibold lg:text-3xl xl:text-4xl">
             English is not rocket science.
             <br /> (But I can help if it feels like it)
           </p>
-          <p className="text-xl">
+          <p className="text-lg md:text-lg xl:text-xl">
             Hello everyone! My name is [Your Name], and I've been navigating the
             wonderful world of the English language for over [Number] years. You
             could say I've seen it all – from Shakespearean sonnets to the
@@ -99,17 +103,14 @@ const HomeLayout: React.FC = () => {
             you on that journey.
           </p>
         </div>
-        <div className="relative flex items-center justify-center">
-          <img
-            src={teacher}
-            alt="a picture of the enlgish teacher"
-            className="aspect-auto min-w-[40rem] rotate-3"
-          />
-        </div>
+        <img
+          src={teacher}
+          alt="a picture of the enlgish teacher"
+          className="aspect-auto min-w-[10rem] rotate-3 bg-red-200 md:min-w-[20rem] lg:min-w-[25rem] xl:min-w-[30rem]"
+        />
       </div>
-      <footer className="mb-20 flex min-h-[10rem] w-full items-center justify-between bg-slate-800 p-2 text-white">
+      <footer className="mb-21 flex min-h-[4rem] w-full items-center justify-center bg-slate-800 p-2 text-white">
         <p>Copyright © Speak and Spell Academy</p>
-        <p>Made with ❤️ by the Speak and Spell Academy team</p>
       </footer>
     </div>
   );
