@@ -11,6 +11,7 @@ export default {
         CelticBlue: "#226CE0",
         OxfordBlue: "#0E1428",
         Platinum: "#E1E6E1",
+        Sunglow: "#FDCC3E",
       },
     },
   },
