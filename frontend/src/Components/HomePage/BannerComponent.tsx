@@ -1,6 +1,6 @@
 import React from "react";
-import confidentWoman from "../assets/confidentWoman.png";
-const HomePageBannerComponent: React.FC = () => {
+import confidentWoman from "../../assets/confidentWoman.png";
+const BannerComponent: React.FC = () => {
   return (
     <div className="flex max-h-[30rem] max-w-[90%] flex-col-reverse items-stretch justify-center rounded-[40px] bg-OxfordBlue lg:max-h-[40rem] lg:flex-row lg:rounded-[50px] xl:max-w-[80%]">
       <p className="flex items-center p-1 lg:p-5">
@@ -18,4 +18,4 @@ const HomePageBannerComponent: React.FC = () => {
     </div>
   );
 };
-export default HomePageBannerComponent;
+export default BannerComponent;

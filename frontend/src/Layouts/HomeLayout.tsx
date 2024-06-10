@@ -1,15 +1,15 @@
 import React from "react";
-import HomePageBannerComponent from "../Components/HomePageBannerComponent";
-import WhychooseEnglishComponent from "../Components/WhychooseEnglishComponent";
-import IntroAcademyComponent from "../Components/IntroAcademyComponent";
-import WhyChooseUsComponent from "../Components/WhyChooseUsComponent";
-import TestimonialsComponent from "../Components/TestimonialsComponent";
+import WhyChooseUsComponent from "../Components/HomePage/WhyChooseUsComponent";
+import TestimonialsComponent from "../Components/HomePage/TestimonialsComponent";
+import BannerComponent from "../Components/HomePage/BannerComponent";
+import AboutUsComponent from "../Components/HomePage/AboutUsComponent";
+import WhyEnglishComponent from "../Components/HomePage/WhyEnglishComponent";
 const HomeLayout: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-16 p-1">
-      <HomePageBannerComponent />
-      <IntroAcademyComponent />
-      <WhychooseEnglishComponent />
+      <BannerComponent />
+      <AboutUsComponent />
+      <WhyEnglishComponent />
       <WhyChooseUsComponent />
       <TestimonialsComponent />
     </div>
