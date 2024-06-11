@@ -4,7 +4,7 @@ import HomeLayout from "./Layouts/HomeLayout";
 function App() {
   return (
     <div className="flex h-screen flex-col overflow-y-auto overflow-x-hidden">
-      {/* <NavbarLayout /> */}
+      <NavbarLayout />
       <div className="grow pt-[4rem]">
         <Routes>
           <Route path="/" element={<HomeLayout />} />
@@ -12,9 +12,9 @@ function App() {
           <Route path="/blogs/*" element={<h1>Blogs</h1>} />
           <Route path="/contactus" element={<h1>Contact Us</h1>} />
         </Routes>
-        {/* <footer className="flex min-h-[4rem] w-full items-center justify-center bg-slate-800 p-2 text-white">
-        <p>Copyright © Speak and Spell Academy</p>
-      </footer> */}
+        <footer className="flex min-h-[4rem] w-full items-center justify-center bg-slate-800 p-2 text-white">
+          <p>Copyright © Speak and Spell Academy</p>
+        </footer>
       </div>
     </div>
   );

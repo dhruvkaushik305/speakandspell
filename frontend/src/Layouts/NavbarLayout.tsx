@@ -8,7 +8,7 @@ const NavbarLayout: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
-    <div className="absolute flex h-[4rem] w-full items-center justify-between border-b border-slate-200 p-2 lg:justify-around">
+    <div className="flex h-[4rem] w-full items-center justify-between border-b border-slate-200 p-2 lg:justify-around">
       <Link
         className="text-nowrap p-1 font-Roboto text-2xl font-bold md:text-3xl"
         to="/"
