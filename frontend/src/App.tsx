@@ -14,10 +14,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeLayout />} />
           <Route path="/aboutus" element={<AboutUsLayout />} />
+          <Route path="/faq" element={<FaqLayout />} />
           <Route path="/courses/*" element={<CoursesLayout />} />
           <Route path="/blogs/*" element={<h1>Blogs</h1>} />
           <Route path="/contactus" element={<ContactusLayout />} />
-          <Route path="/faq" element={<FaqLayout />} />
           <Route path="*" element={<NotFoundLayout />} />
         </Routes>
         <footer className="flex min-h-[4rem] w-full items-center justify-center bg-slate-800 p-2 text-white">
