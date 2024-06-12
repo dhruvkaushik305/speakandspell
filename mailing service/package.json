@@ -1,0 +1,24 @@
+{
+  "name": "mailing-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "dotenv -- nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mail"
+  ],
+  "author": "Dhruv Kaushik",
+  "license": "ISC",
+  "description": "This is a simple mailing service that can be used to send emails",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.4.2",
+    "nodemon": "^3.1.3"
+  }
+}
