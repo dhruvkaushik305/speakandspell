@@ -6,7 +6,7 @@ const NavbarLayout: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
-    <div className="flex h-[4rem] w-full items-center justify-between border-b border-slate-200 bg-OxfordBlue p-2 lg:justify-around">
+    <div className="flex h-[4rem] w-full items-center justify-between border-b border-slate-400 bg-gray-300 p-2 lg:justify-around">
       <NavbarLinksComponent
         title="Speak and Spell Academy"
         refersTo=""
@@ -29,33 +29,33 @@ const NavbarLayout: React.FC = () => {
         {isOpen && (
           <div className="flex flex-col">
             <nav
-              className="absolute -right-2 top-[2.5rem] z-50 flex h-screen w-screen flex-col items-center gap-5 bg-slate-800/90 p-4"
+              className="fixed right-0 top-[3.25rem] z-50 flex h-screen w-screen flex-col items-center gap-5 bg-gray-300/90 p-4"
               onClick={toggleMenu}
             >
               <NavbarLinksComponent
                 title="Courses"
                 refersTo="courses"
-                classes="w-full text-center p-2 rounded-lg underline"
+                classes="w-full text-center p-2 text-lg rounded-lg underline"
               />
               <NavbarLinksComponent
                 title="Blogs"
                 refersTo="blogs"
-                classes="w-full text-center p-2 rounded-lg underline"
+                classes="w-full text-center p-2 text-lg rounded-lg underline"
               />
               <NavbarLinksComponent
                 title="Faq"
                 refersTo="faq"
-                classes="w-full text-center p-2 rounded-lg underline"
+                classes="w-full text-center p-2 text-lg rounded-lg underline"
               />
               <NavbarLinksComponent
                 title="About Us"
                 refersTo="aboutus"
-                classes="w-full text-center p-2 rounded-lg underline"
+                classes="w-full text-center p-2 text-lg rounded-lg underline"
               />
               <NavbarLinksComponent
                 title="Contact Us"
                 refersTo="contactus"
-                classes="w-full text-center p-2 rounded-lg underline"
+                classes="w-full text-center p-2 text-lg rounded-lg underline"
               />
             </nav>
           </div>
