@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="flex h-screen flex-col overflow-y-auto overflow-x-hidden">
       <NavbarLayout />
-      <div className="grow">
+      <div className="grow pt-[4rem]">
         <Routes>
           <Route path="/" element={<HomeLayout />} />
           <Route path="/aboutus" element={<AboutUsLayout />} />

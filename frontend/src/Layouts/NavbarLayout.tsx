@@ -6,7 +6,7 @@ const NavbarLayout: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
-    <div className="flex h-[4rem] w-full items-center justify-between border-b border-slate-400 bg-gray-300 p-2 lg:justify-around">
+    <div className="fixed flex h-[4rem] w-full items-center justify-between border-b border-slate-200 bg-yellow-100 p-2 lg:justify-around">
       <NavbarLinksComponent
         title="Speak and Spell Academy"
         refersTo=""
@@ -29,7 +29,7 @@ const NavbarLayout: React.FC = () => {
         {isOpen && (
           <div className="flex flex-col">
             <nav
-              className="fixed right-0 top-[3.25rem] z-50 flex h-screen w-screen flex-col items-center gap-5 bg-gray-300/90 p-4"
+              className="fixed right-0 top-[3.25rem] z-50 flex h-screen w-screen flex-col items-center gap-5 border-t border-slate-300 bg-yellow-100/90 p-4"
               onClick={toggleMenu}
             >
               <NavbarLinksComponent
