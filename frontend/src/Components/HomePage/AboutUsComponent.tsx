@@ -19,13 +19,12 @@ const AboutUsComponent: React.FC = () => {
           </p>
           <Link
             to="/aboutus"
-            className="bg-Tertiary mx-auto w-fit rounded-md px-4 py-3 text-sm text-white lg:text-lg"
+            className="bg-Tertiary mx-auto w-fit rounded-md px-3 py-2 text-sm text-white lg:text-lg"
           >
             Read our story
           </Link>
         </div>
       }
-      contentClasses="bg-Sunglow leading-7"
     />
   );
 };

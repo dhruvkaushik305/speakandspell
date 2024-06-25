@@ -9,8 +9,8 @@ const HomeLayout: React.FC = () => {
     <div className="flex flex-col items-center justify-center gap-16">
       <BannerComponent />
       <AboutUsComponent />
-      <WhyEnglishComponent />
       <WhyChooseUsComponent />
+      <WhyEnglishComponent />
       <TestimonialsComponent />
     </div>
   );

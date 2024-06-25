@@ -9,15 +9,13 @@ const SectionLayout: React.FC<{
   return (
     <div className="flex max-w-[90%] flex-col gap-5 xl:max-w-[80%]">
       <h1
-        className={`text-center text-3xl font-bold lg:text-4xl ${headingClasses}`}
+        className={`text-center text-2xl font-bold lg:text-3xl ${headingClasses}`}
       >
         {title}
       </h1>
       {content && (
         <div className="flex flex-col items-center gap-2 overflow-x-auto overflow-y-hidden">
-          <p
-            className={`text-xl lg:text-2xl ${contentClasses} rounded-xl px-6 py-9`}
-          >
+          <p className={`text-sm lg:text-lg ${contentClasses} p-2`}>
             {content}
           </p>
         </div>
