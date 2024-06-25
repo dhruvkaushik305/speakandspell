@@ -6,7 +6,7 @@ import AboutUsComponent from "../Components/HomePage/AboutUsComponent";
 import WhyEnglishComponent from "../Components/HomePage/WhyEnglishComponent";
 const HomeLayout: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-16 p-1">
+    <div className="flex flex-col items-center justify-center gap-16">
       <BannerComponent />
       <AboutUsComponent />
       <WhyEnglishComponent />
