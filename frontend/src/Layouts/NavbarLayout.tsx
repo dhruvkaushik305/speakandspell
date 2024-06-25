@@ -17,7 +17,7 @@ const NavbarLayout: React.FC = () => {
     closed: { rotate: 0 },
   };
   return (
-    <div className="bg-Primary fixed flex h-[4rem] w-full items-center justify-between border-b border-slate-200 p-2 lg:justify-around">
+    <div className="bg-Primary fixed z-50 flex h-[4rem] w-full items-center justify-between border-b border-slate-200 p-2 lg:justify-around">
       <Link to="/">
         <div className="flex flex-col items-start p-1 font-Roboto text-xl font-semibold leading-6 text-black xl:text-2xl xl:leading-6">
           <p>Speak</p>
