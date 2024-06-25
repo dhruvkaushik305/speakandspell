@@ -1,23 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 interface NavbarLinksComponentProps {
-  title: string;
+  title?: string;
   refersTo: string;
   classes?: string;
+  component?: React.ReactNode;
 }
 const NavbarLinksComponent: React.FC<NavbarLinksComponentProps> = ({
   title,
   refersTo,
   classes,
+  component,
 }) => {
   return (
     <NavLink
       to={`/${refersTo.toLowerCase()}`}
       className={({ isActive }) => {
-        return `${classes} ${isActive ? "text-black underline" : "text-black"}`;
+        return `text-sm xl:text-lg ${classes} ${isActive ? "text-black underline" : "text-black"}`;
       }}
     >
       {title}
+      {component}
     </NavLink>
   );
 };
