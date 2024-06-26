@@ -1,10 +1,10 @@
 import React from "react";
 import WhyChooseUsCardComponent from "../WhyChooseUsCardComponent";
 import SectionLayout from "./SectionLayout";
-import flexible from "../../assets/flexible.jpg";
-import personalised from "../../assets/personalised.jpg";
-import smallClassroom from "../../assets/small-classroom.jpg";
-import engaging from "../../assets/engaging.jpg";
+import flexible from "../../assets/flexible-convenience.svg";
+import personalised from "../../assets/personalised-learning.svg";
+import smallClassroom from "../../assets/small-class.svg";
+import engaging from "../../assets/engaging-instruction.svg";
 const WhyChooseUsComponent: React.FC = () => {
   return (
     <SectionLayout
@@ -14,28 +14,28 @@ const WhyChooseUsComponent: React.FC = () => {
           <WhyChooseUsCardComponent
             title={"Small Class Sizes"}
             content={
-              "Unlike large institutions, our small classes ensure personalized attention. We tailor your learning journey, fostering a richer experience that gets results."
+              "Our small class sizes mean you get the individual attention you deserve. We tailor our teaching to fit your needs and pace, making learning more effective and fun."
             }
             image={smallClassroom}
           />
           <WhyChooseUsCardComponent
             title={"Personalised Learning"}
             content={
-              "Your goals, your style, your English. Our personalized lessons cater to your goals, learning style, and preferences. Every session is crafted for YOU, making learning effective and enjoyable."
+              "You're unique, and so is our approach. We personalize each lesson to match your goals and style, ensuring every session is enjoyable and just right for you."
             }
             image={personalised}
           />
           <WhyChooseUsCardComponent
             title={"Engaging Instruction"}
             content={
-              "Interactive learning, real results. Our classes keep you motivated with engaging activities, discussions, and practical exercises. Learn English the fun way!"
+              "Learning with us is anything but boring! Our lively, interactive classes are packed with engaging activities, discussions, and exercises to keep you motivated and excited."
             }
             image={engaging}
           />
           <WhyChooseUsCardComponent
             title={"Flexible Convenience"}
             content={
-              "Life's busy. English learning shouldn't be. Online, offline, mornings, evenings - you choose!"
+              "We know life gets busy, so we offer flexible scheduling to fit your lifestyle. Whether you prefer online or offline, morning or evening, we've got the perfect time for you."
             }
             image={flexible}
           />
