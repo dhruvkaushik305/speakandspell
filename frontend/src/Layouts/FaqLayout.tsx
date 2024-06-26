@@ -3,11 +3,12 @@ import SectionLayout from "../Components/HomePage/SectionLayout";
 import AccordianComponent from "../Components/AccordianComponent";
 const FaqLayout: React.FC = () => {
   return (
-    <div className="flex h-full flex-col items-center justify-center">
+    <div className="flex h-full flex-col items-center gap-10">
+      <div className="bg-faqBanner flex h-[10rem] w-full flex-col-reverse bg-cover bg-top sm:h-[20rem] lg:h-[30rem]"></div>
       <SectionLayout
-        title="FAQ"
+        title="Frequently Asked Questions"
         extraComponents={
-          <div>
+          <div className="rounded-lg bg-Secondary/30 p-1">
             <AccordianComponent
               title="Who can join your courses?"
               content="Our courses are suitable for individuals of all ages and backgrounds, including students, professionals, housewives, and job seekers."

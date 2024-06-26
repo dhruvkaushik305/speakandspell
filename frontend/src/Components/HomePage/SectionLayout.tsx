@@ -1,6 +1,6 @@
 import React from "react";
 const SectionLayout: React.FC<{
-  title: string;
+  title?: string;
   content?: string;
   extraComponents?: React.ReactNode;
   headingClasses?: string;

@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         studentsOnTable: "url('./assets/students-on-table.jpg')",
+        faqBanner: "url('./assets/faq-banner.jpg')",
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
