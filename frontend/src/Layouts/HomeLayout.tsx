@@ -1,6 +1,6 @@
 import React from "react";
 import WhyChooseUsComponent from "../Components/HomePage/WhyChooseUsComponent";
-// import TestimonialsComponent from "../Components/HomePage/TestimonialsComponent";
+import TestimonialsComponent from "../Components/HomePage/TestimonialsComponent";
 import BannerComponent from "../Components/HomePage/BannerComponent";
 import AboutUsComponent from "../Components/HomePage/AboutUsComponent";
 import WhyEnglishComponent from "../Components/HomePage/WhyEnglishComponent";
@@ -11,7 +11,7 @@ const HomeLayout: React.FC = () => {
       <AboutUsComponent />
       <WhyChooseUsComponent />
       <WhyEnglishComponent />
-      {/* <TestimonialsComponent /> */}
+      <TestimonialsComponent />
     </div>
   );
 };

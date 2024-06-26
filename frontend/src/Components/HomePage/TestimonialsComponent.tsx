@@ -1,57 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionLayout from "./SectionLayout";
-
+import back from "../../assets/back.png";
+import next from "../../assets/next.png";
 const TestimonialsComponent: React.FC = () => {
+  const [idx, setIdx] = useState(0);
   const testimonials = [
     {
+      index: 0,
       name: "John Doe",
-      testimonial: "I love this website!",
+      testimonial:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse itaque quae natus nisi, laudantium quos quaerat. Quibusdam corporis, eos excepturi, ipsam fuga accusamus obcaecati facilis provident veniam architecto consequuntur inventore!",
       occupation: "Software Engineer",
     },
     {
+      index: 1,
       name: "Jane Doe",
-      testimonial: "This is the best website I've ever used!",
+      testimonial:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse itaque quae natus nisi, laudantium quos quaerat. Quibusdam corporis, eos excepturi, ipsam fuga accusamus obcaecati facilis provident veniam architecto consequuntur inventore!",
       occupation: "Marketing Manager",
     },
     {
+      index: 2,
       name: "Bob Smith",
-      testimonial: "I'm so impressed with this website!",
+      testimonial:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse itaque quae natus nisi, laudantium quos quaerat. Quibusdam corporis, eos excepturi, ipsam fuga accusamus obcaecati facilis provident veniam architecto consequuntur inventore!",
       occupation: "Graphic Designer",
     },
     {
+      index: 3,
       name: "Alice Johnson",
-      testimonial: "This website is amazing!",
+      testimonial:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse itaque quae natus nisi, laudantium quos quaerat. Quibusdam corporis, eos excepturi, ipsam fuga accusamus obcaecati facilis provident veniam architecto consequuntur inventore!",
       occupation: "Web Developer",
     },
     {
+      index: 4,
       name: "David Lee",
-      testimonial: "I've been using this website for years!",
+      testimonial:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse itaque quae natus nisi, laudantium quos quaerat. Quibusdam corporis, eos excepturi, ipsam fuga accusamus obcaecati facilis provident veniam architecto consequuntur inventore!",
       occupation: "Content Writer",
     },
-    {
-      name: "Sarah Lee",
-      testimonial: "This website is the best I've ever used!",
-      occupation: "Social Media Manager",
-    },
-    {
-      name: "Michael Lee",
-      testimonial: "I love this website!",
-      occupation: "UX Designer",
-    },
   ];
+  const handlePrev = () => {
+    setIdx((prev) => prev - 1);
+  };
+  const handleNext = () => {
+    setIdx((prev) => prev + 1);
+  };
+  const visibleTestimonials = [];
+  for (let i = idx; i < idx + 1; i++) {
+    visibleTestimonials.push(testimonials.at(i % testimonials.length));
+  }
   return (
     <SectionLayout
       title="Testimonials"
       extraComponents={
-        <div className="flex gap-10 overflow-x-auto overflow-y-hidden">
-          {testimonials.map((testimonial) => (
-            <div className="flex w-[25rem] flex-col gap-5 rounded-xl bg-Sunglow p-4">
-              <p className="text-xl">{testimonial.testimonial}</p>
-              <p className="w-full text-right text-sm italic">
-                {testimonial.name},{testimonial.occupation}
-              </p>
-            </div>
-          ))}
+        <div className="flex items-center justify-center gap-2">
+          <img src={back} alt="back" className="size-5" onClick={handlePrev} />
+          <div className="">
+            {visibleTestimonials.map((testimonial) => (
+              <div
+                key={testimonial!.index}
+                className="flex min-w-[25rem] flex-col gap-5 rounded-xl bg-Secondary/40 p-4"
+              >
+                <p className="text-xl">{testimonial!.testimonial}</p>
+                <p className="w-full text-right text-sm italic">
+                  {testimonial!.name},{testimonial!.occupation}
+                </p>
+              </div>
+            ))}
+          </div>
+          <img src={next} alt="front" className="size-5" onClick={handleNext} />
         </div>
       }
     />
