@@ -16,17 +16,19 @@ const ContactusLayout: React.FC = () => {
     console.log(data);
   };
   return (
-    <div className="mx-auto flex h-screen max-w-[90%] flex-col items-center justify-center gap-10 xl:max-w-[80%]">
-      <div className="flex flex-col items-center justify-center gap-3">
-        <h1 className="text-3xl font-bold md:text-3xl lg:text-4xl">
-          Contact Us
-        </h1>
-        <h2 className="text-xl italic md:text-2xl">
-          Need help? Don't worry we have real people behind the keyboard.
-        </h2>
+    <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center gap-5 md:w-[100%]">
+      <div className="md:bg-contactusBanner flex h-[10rem] w-full flex-col items-center justify-center bg-cover bg-center md:h-[15rem] lg:h-[20rem]">
+        <div className="flex flex-col items-center justify-center gap-3 rounded-xl backdrop-blur-lg">
+          <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
+            Contact Us
+          </h1>
+          <h2 className="text-center text-lg italic md:text-2xl">
+            Need help? Don't worry we have real people behind the keyboard.
+          </h2>
+        </div>
       </div>
       <form
-        className="flex w-full flex-col items-center justify-center gap-5"
+        className="flex w-full flex-col items-center gap-5 md:min-w-[80%] md:grow md:justify-center"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full flex-col items-start justify-center gap-1 md:w-[80%] xl:w-[50%]">
@@ -101,7 +103,7 @@ const ContactusLayout: React.FC = () => {
             {...register("query", { required: true })}
           />
         </div>
-        <button className="w-[60%] rounded-xl bg-black px-4 py-3 text-white sm:w-[20%]">
+        <button className="w-[60%] rounded-xl bg-Tertiary px-4 py-3 text-white sm:w-[20%]">
           Submit
         </button>
       </form>

@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         studentsOnTable: "url('./assets/students-on-table.jpg')",
         faqBanner: "url('./assets/faq-banner.jpg')",
+        contactusBanner: "url('./assets/contactus-banner.jpg')",
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
