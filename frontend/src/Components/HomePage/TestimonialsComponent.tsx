@@ -77,43 +77,49 @@ const TestimonialsComponent: React.FC = () => {
   }
   return (
     <SectionLayout
-      title="Testimonials"
       extraComponents={
-        <div className="flex items-center justify-center gap-2">
-          <img
-            src={back}
-            alt="back"
-            className="size-5 cursor-pointer"
-            onClick={handlePrev}
-          />
-          <div className="">
-            {visibleTestimonials.map((testimonial) => (
-              <motion.div
-                key={testimonial!.index}
-                className="flex min-w-[25rem] flex-col gap-5 rounded-xl bg-Secondary/40 p-4"
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 40 },
-                  opacity: { duration: 0.2 },
-                }}
-              >
-                <p className="text-xl">{testimonial!.testimonial}</p>
-                <p className="w-full text-right text-sm italic">
-                  {testimonial!.name},{testimonial!.occupation}
-                </p>
-              </motion.div>
-            ))}
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="w-full text-left text-lg font-semibold italic text-slate-500 lg:text-xl">
+            Don't just take our word for it
+          </h1>
+          <div className="flex items-center justify-center gap-2">
+            <img
+              src={back}
+              alt="back"
+              className="size-4 cursor-pointer"
+              onClick={handlePrev}
+            />
+            <div className="">
+              {visibleTestimonials.map((testimonial) => (
+                <motion.div
+                  key={testimonial!.index}
+                  className="flex flex-col gap-5 rounded-xl bg-Secondary/20 p-2"
+                  custom={direction}
+                  variants={variants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 40 },
+                    opacity: { duration: 0.2 },
+                  }}
+                >
+                  <p className="text-md lg:text-lg">
+                    {testimonial!.testimonial}
+                  </p>
+                  <p className="text-md w-full text-right font-medium italic lg:text-lg">
+                    {testimonial!.name},{testimonial!.occupation}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+            <img
+              src={next}
+              alt="front"
+              className="size-4 cursor-pointer"
+              onClick={handleNext}
+            />
           </div>
-          <img
-            src={next}
-            alt="front"
-            className="size-5 cursor-pointer"
-            onClick={handleNext}
-          />
         </div>
       }
     />

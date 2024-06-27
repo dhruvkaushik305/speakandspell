@@ -11,9 +11,9 @@ const WhyChooseUsCardComponent: React.FC<WhyChooseUsCardProps> = ({
   image,
 }) => {
   return (
-    <div className="flex flex-col items-center overflow-hidden rounded-xl bg-Secondary/30 p-1 pl-4 shadow-lg sm:flex-row">
+    <div className="flex flex-col items-center overflow-hidden rounded-xl bg-Secondary/30 pl-4 shadow-lg sm:flex-row sm:p-1 sm:pl-4">
       <img src={image} alt="illustration svg" className="size-56 xl:size-64" />
-      <div className="flex flex-col gap-1 p-2">
+      <div className="flex flex-col gap-1 p-2 text-gray-700">
         <p className="text-left text-lg md:text-xl">{title}</p>
         <p className="text-left">{content}</p>
       </div>

@@ -4,25 +4,28 @@ import { Link } from "react-router-dom";
 const AboutUsComponent: React.FC = () => {
   return (
     <SectionLayout
-      title="Elevate your language skills with us"
       extraComponents={
         <div className="flex flex-col items-center gap-2">
-          <p className="text-Secondary/95 bg-black bg-clip-text text-justify text-sm lg:text-lg">
-            We are committed to ensuring that each student's English learning
-            journey is both enjoyable and enriching. With small class sizes,
-            personalised lessons, and engaging activities, we create a conducive
-            environment for effective learning and provide an accessible
-            platform, where the learners feel empowered to actively participate
-            in the learning process and master their communication skills.
-            Whether you are a beginner or an advanced learner, we have the
-            perfect course to help you achieve your English language objectives.
+          <p className="w-full text-left text-lg font-semibold italic text-slate-500 lg:text-xl">
+            Who is Speak and Spell?
           </p>
-          <Link
-            to="/aboutus"
-            className="bg-Tertiary mx-auto w-fit rounded-md px-3 py-2 text-sm text-white lg:text-lg"
-          >
-            Read our story
-          </Link>
+          <p className="text-justify text-sm text-gray-600 lg:text-lg">
+            We are an academy committed to ensuring that each student's English
+            learning journey is both enjoyable and enriching. With small class
+            sizes, personalised lessons, and engaging activities, we create a
+            conducive environment for effective learning and provide an
+            accessible platform, where the learners feel empowered to actively
+            participate in the learning process and master their communication
+            skills. Whether you are a beginner or an advanced learner, we have
+            the perfect course to help you achieve your English language
+            objectives. &nbsp;
+            <Link
+              to="/aboutus"
+              className="text-md font-medium italic underline"
+            >
+              Know more
+            </Link>
+          </p>
         </div>
       }
     />
