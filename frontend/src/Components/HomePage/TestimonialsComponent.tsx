@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import SectionLayout from "./SectionLayout";
 import back from "../../assets/back.png";
 import next from "../../assets/next.png";
+import { motion } from "framer-motion";
 const TestimonialsComponent: React.FC = () => {
   const [idx, setIdx] = useState(0);
+  const [direction, setDirection] = useState(0);
   const testimonials = [
     {
       index: 0,
@@ -41,11 +43,33 @@ const TestimonialsComponent: React.FC = () => {
       occupation: "Content Writer",
     },
   ];
+  const variants = {
+    enter: (direction: number) => {
+      return {
+        x: direction > 0 ? 200 : -200,
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 200 : -200,
+        opacity: 0,
+      };
+    },
+  };
   const handlePrev = () => {
     setIdx((prev) => prev - 1);
+    setDirection(-1);
   };
   const handleNext = () => {
     setIdx((prev) => prev + 1);
+    setDirection(1);
   };
   const visibleTestimonials = [];
   for (let i = idx; i < idx + 1; i++) {
@@ -56,21 +80,40 @@ const TestimonialsComponent: React.FC = () => {
       title="Testimonials"
       extraComponents={
         <div className="flex items-center justify-center gap-2">
-          <img src={back} alt="back" className="size-5" onClick={handlePrev} />
+          <img
+            src={back}
+            alt="back"
+            className="size-5 cursor-pointer"
+            onClick={handlePrev}
+          />
           <div className="">
             {visibleTestimonials.map((testimonial) => (
-              <div
+              <motion.div
                 key={testimonial!.index}
                 className="flex min-w-[25rem] flex-col gap-5 rounded-xl bg-Secondary/40 p-4"
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 40 },
+                  opacity: { duration: 0.2 },
+                }}
               >
                 <p className="text-xl">{testimonial!.testimonial}</p>
                 <p className="w-full text-right text-sm italic">
                   {testimonial!.name},{testimonial!.occupation}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <img src={next} alt="front" className="size-5" onClick={handleNext} />
+          <img
+            src={next}
+            alt="front"
+            className="size-5 cursor-pointer"
+            onClick={handleNext}
+          />
         </div>
       }
     />
