@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 type FormInputs = {
   name: string;
   email: string;
@@ -16,7 +17,12 @@ const ContactusLayout: React.FC = () => {
     console.log(data);
   };
   return (
-    <div className="mx-auto flex h-full max-w-[95%] flex-col items-center justify-center gap-5 md:max-w-[90%]">
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      className="mx-auto flex h-full max-w-[95%] flex-col items-center justify-center gap-5 md:max-w-[90%]"
+    >
       <div className="flex flex-col items-center justify-center gap-3 text-gray-600">
         <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
           Contact Us
@@ -105,7 +111,7 @@ const ContactusLayout: React.FC = () => {
           Submit
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 export default ContactusLayout;

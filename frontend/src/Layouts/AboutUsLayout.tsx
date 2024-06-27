@@ -2,12 +2,18 @@ import React from "react";
 import SectionLayout from "../Components/HomePage/SectionLayout";
 import building from "../assets/building.svg";
 import teacher from "../assets/teacher.svg";
+import { motion } from "framer-motion";
 const AboutUsLayout: React.FC = () => {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-5">
       <SectionLayout
         extraComponents={
-          <div className="flex flex-col items-start gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col items-start gap-2"
+          >
             <h1 className="text-xl font-semibold italic text-gray-600 sm:text-2xl">
               Who are we?
             </h1>
@@ -40,12 +46,17 @@ const AboutUsLayout: React.FC = () => {
                 proficiency.
               </p>
             </div>
-          </div>
+          </motion.div>
         }
       />
       <SectionLayout
         extraComponents={
-          <div className="flex flex-col items-start gap-2">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col items-start gap-2"
+          >
             <h1 className="text-xl font-semibold italic text-gray-600 sm:text-2xl">
               Our Faculty
             </h1>
@@ -59,15 +70,10 @@ const AboutUsLayout: React.FC = () => {
                 travelling enriches my dynamic and engaging teaching approach.
               </p>
             </div>
-          </div>
+          </motion.div>
         }
       />
     </div>
   );
 };
 export default AboutUsLayout;
-/* With over 19 years of combined experience in teaching and web
-              content development, I provide comprehensive and effective English
-              training services designed to meet the unique needs of each
-              learner. My love for writing, reading, painting, and travelling
-              enriches my dynamic and engaging teaching approach. */

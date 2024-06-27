@@ -2,9 +2,15 @@ import React from "react";
 import SectionLayout from "../Components/HomePage/SectionLayout";
 import AccordianComponent from "../Components/AccordianComponent";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const FaqLayout: React.FC = () => {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-10">
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      className="flex h-full flex-col items-center justify-center gap-10"
+    >
       <SectionLayout
         extraComponents={
           <div className="flex flex-col gap-7">
@@ -16,8 +22,7 @@ const FaqLayout: React.FC = () => {
                 Common Questions, Clear Answers
               </h2>
             </div>
-
-            <div className="divide-y-2 divide-solid divide-gray-200 rounded-lg bg-Secondary/20 p-1">
+            <div className="divide-y-2 divide-solid divide-gray-300 rounded-lg bg-Secondary/20 p-1">
               <AccordianComponent
                 title="Who can join your courses?"
                 content="Our courses are suitable for individuals of all ages and backgrounds, including students, professionals, housewives, and job seekers."
@@ -55,7 +60,7 @@ const FaqLayout: React.FC = () => {
           Contact us
         </Link>
       </p>
-    </div>
+    </motion.div>
   );
 };
 export default FaqLayout;

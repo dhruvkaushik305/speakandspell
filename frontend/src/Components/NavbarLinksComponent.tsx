@@ -16,7 +16,7 @@ const NavbarLinksComponent: React.FC<NavbarLinksComponentProps> = ({
     <NavLink
       to={`/${refersTo.toLowerCase()}`}
       className={({ isActive }) => {
-        return `text-sm xl:text-lg ${classes} ${isActive ? "text-black underline" : "text-black"}`;
+        return `text-sm xl:text-lg ${classes} ${isActive ? "text-black underline" : "text-gray-700"}`;
       }}
     >
       {title}

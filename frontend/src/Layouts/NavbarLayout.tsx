@@ -17,9 +17,9 @@ const NavbarLayout: React.FC = () => {
     closed: { rotate: 0 },
   };
   return (
-    <div className="bg-Primary fixed z-50 flex h-[4rem] w-full items-center justify-between border-b border-slate-200 p-2 lg:justify-around">
+    <div className="fixed z-50 flex h-[4rem] w-full items-center justify-between border-b border-slate-200 bg-Primary p-2 lg:justify-around">
       <Link to="/">
-        <div className="flex flex-col items-start p-1 font-Roboto text-xl font-semibold leading-6 text-black xl:text-2xl xl:leading-6">
+        <div className="flex flex-col items-start p-1 font-Roboto text-xl font-semibold leading-6 text-gray-700 xl:text-2xl xl:leading-6">
           <p>Speak</p>
           <p>& Spell Academy</p>
         </div>
@@ -50,7 +50,7 @@ const NavbarLayout: React.FC = () => {
               exit="closed"
               variants={menuVariants}
               transition={{ type: "spring", stiffness: 250, damping: 30 }}
-              className="bg-Primary/95 fixed right-0 top-[4rem] z-50 flex h-screen w-screen flex-col items-center justify-start p-4"
+              className="fixed right-0 top-[4rem] z-50 flex h-screen w-screen flex-col items-center justify-start bg-Primary/95 p-4"
             >
               <div className="flex flex-col">
                 <nav className="flex flex-col gap-5 p-4" onClick={toggleMenu}>

@@ -89,7 +89,7 @@ const TestimonialsComponent: React.FC = () => {
               className="size-4 cursor-pointer"
               onClick={handlePrev}
             />
-            <div className="">
+            <div className="text-gray-700">
               {visibleTestimonials.map((testimonial) => (
                 <motion.div
                   key={testimonial!.index}
