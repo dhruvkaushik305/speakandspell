@@ -11,7 +11,7 @@ const HomeLayout: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      className="mb-10 flex flex-col items-center justify-center gap-16"
+      className="mb-10 flex flex-col items-center justify-center gap-10 md:gap-16"
     >
       <BannerComponent />
       <AboutUsComponent />
