@@ -16,29 +16,27 @@ const ContactusLayout: React.FC = () => {
     console.log(data);
   };
   return (
-    <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center gap-5 md:w-[100%]">
-      <div className="md:bg-contactusBanner flex h-[10rem] w-full flex-col items-center justify-center bg-cover bg-center md:h-[15rem] lg:h-[20rem]">
-        <div className="flex flex-col items-center justify-center gap-3 rounded-xl backdrop-blur-lg">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
-            Contact Us
-          </h1>
-          <h2 className="text-center text-lg italic md:text-2xl">
-            Need help? Don't worry we have real people behind the keyboard.
-          </h2>
-        </div>
+    <div className="mx-auto flex h-full max-w-[95%] flex-col items-center justify-center gap-5 md:max-w-[90%]">
+      <div className="flex flex-col items-center justify-center gap-3 text-gray-600">
+        <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
+          Contact Us
+        </h1>
+        <h2 className="text-center text-lg italic md:text-xl">
+          Need help? Don't worry we have real people behind the keyboard.
+        </h2>
       </div>
       <form
-        className="flex w-full flex-col items-center gap-5 md:min-w-[80%] md:grow md:justify-center"
+        className="flex w-full flex-col items-center gap-5 p-3"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full flex-col items-start justify-center gap-1 md:w-[80%] xl:w-[50%]">
-          <label htmlFor={"name"} className="text-lg sm:text-xl">
+          <label htmlFor={"name"} className="text-md text-gray-600 sm:text-lg">
             Name
           </label>
           <input
             type="text"
             id="name"
-            className="w-full rounded-lg bg-gray-200 p-2 focus:outline-none"
+            className="w-full rounded-lg bg-gray-200/70 p-2 text-gray-800 focus:outline-none"
             placeholder="Enter your name"
             {...register("name", {
               pattern: {
@@ -51,13 +49,13 @@ const ContactusLayout: React.FC = () => {
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-1 md:w-[80%] xl:w-[50%]">
-          <label htmlFor={"email"} className="text-lg sm:text-xl">
+          <label htmlFor={"email"} className="text-md text-gray-600 sm:text-lg">
             Email
           </label>
           <input
             type="email"
             id="email"
-            className="w-full rounded-lg bg-gray-200 p-2 focus:outline-none"
+            className="w-full rounded-lg bg-gray-200/70 p-2 text-gray-800 focus:outline-none"
             placeholder="Enter your email"
             {...register("email", {
               pattern: {
@@ -72,13 +70,13 @@ const ContactusLayout: React.FC = () => {
           )}
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-1 md:w-[80%] xl:w-[50%]">
-          <label htmlFor={"phone"} className="text-lg sm:text-xl">
+          <label htmlFor={"phone"} className="text-md text-gray-600 sm:text-lg">
             Phone number
           </label>
           <input
             type="tel"
             id="phone"
-            className="w-full rounded-lg bg-gray-200 p-2 focus:outline-none"
+            className="w-full rounded-lg bg-gray-200/70 p-2 text-gray-800 focus:outline-none"
             placeholder="Enter your phone number"
             {...register("phone", {
               pattern: {
@@ -93,17 +91,17 @@ const ContactusLayout: React.FC = () => {
           )}
         </div>
         <div className="flex w-full flex-col items-start justify-center gap-1 md:w-[80%] xl:w-[50%]">
-          <label htmlFor="query" className="text-lg sm:text-xl">
+          <label htmlFor="query" className="text-md text-gray-600 sm:text-lg">
             Query
           </label>
           <textarea
             id="query"
-            className="h-[6rem] w-full resize-none rounded-lg bg-gray-200 p-2 focus:outline-none"
+            className="h-[6rem] w-full resize-none rounded-lg bg-gray-200/70 p-2 text-gray-800 focus:outline-none"
             placeholder="Enter your query"
             {...register("query", { required: true })}
           />
         </div>
-        <button className="w-[60%] rounded-xl bg-Tertiary px-4 py-3 text-white sm:w-[20%]">
+        <button className="w-[80%] rounded-xl bg-Tertiary/90 px-4 py-3 text-white sm:w-[40%] md:w-[30%]">
           Submit
         </button>
       </form>
