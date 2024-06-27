@@ -5,8 +5,6 @@ export default {
     extend: {
       backgroundImage: {
         studentsOnTable: "url('./assets/students-on-table.jpg')",
-        faqBanner: "url('./assets/faq-banner.jpg')",
-        contactusBanner: "url('./assets/contactus-banner.jpg')",
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
@@ -14,9 +12,6 @@ export default {
         Playwrite: ["Playwrite GB S", "sans-serif"],
       },
       colors: {
-        CelticBlue: "#226CE0",
-        OxfordBlue: "#0E1428",
-        Platinum: "#E1E6E1",
         Sunglow: "#FDCC3E",
         Primary: "#FFFFFF",
         Secondary: "#7A7978",
