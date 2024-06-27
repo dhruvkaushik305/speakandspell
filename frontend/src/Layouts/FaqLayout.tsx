@@ -15,7 +15,7 @@ const FaqLayout: React.FC = () => {
         extraComponents={
           <div className="flex flex-col gap-7">
             <div className="flex flex-col gap-2">
-              <h1 className="w-full text-center text-xl font-bold text-gray-600 lg:text-2xl">
+              <h1 className="w-full text-center text-xl font-bold text-Sunglow lg:text-2xl">
                 Frequently Asked Questions
               </h1>
               <h2 className="text-md w-full text-center font-medium italic text-gray-700 lg:text-xl">

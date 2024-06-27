@@ -10,7 +10,7 @@ const WhyChooseUsComponent: React.FC = () => {
     <SectionLayout
       extraComponents={
         <div className="flex flex-col gap-3">
-          <h1 className="w-full text-left text-lg font-semibold italic text-slate-500 lg:text-xl">
+          <h1 className="w-full text-left text-lg font-semibold italic text-Sunglow lg:text-xl">
             Why Choose Us?
           </h1>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">

@@ -78,9 +78,9 @@ const TestimonialsComponent: React.FC = () => {
   return (
     <SectionLayout
       extraComponents={
-        <div className="flex flex-col items-center gap-4">
-          <h1 className="w-full text-left text-lg font-semibold italic text-slate-500 lg:text-xl">
-            Don't just take our word for it
+        <div className="mx-auto flex flex-col items-center gap-4 md:max-w-[90%] xl:max-w-[80%]">
+          <h1 className="w-full text-left text-lg font-semibold italic text-Sunglow lg:text-xl">
+            What Our Students Say
           </h1>
           <div className="flex items-center justify-center gap-2">
             <img

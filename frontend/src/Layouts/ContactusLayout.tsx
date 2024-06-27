@@ -23,11 +23,11 @@ const ContactusLayout: React.FC = () => {
       transition={{ duration: 1 }}
       className="mx-auto flex h-full max-w-[95%] flex-col items-center justify-center gap-5 md:max-w-[90%]"
     >
-      <div className="flex flex-col items-center justify-center gap-3 text-gray-600">
-        <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl">
+      <div className="flex flex-col items-center justify-center gap-3">
+        <h1 className="text-2xl font-bold text-Sunglow md:text-3xl lg:text-4xl">
           Contact Us
         </h1>
-        <h2 className="text-center text-lg italic md:text-xl">
+        <h2 className="text-center text-lg italic text-gray-600 md:text-xl">
           Need help? Don't worry we have real people behind the keyboard.
         </h2>
       </div>

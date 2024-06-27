@@ -6,8 +6,8 @@ const AboutUsComponent: React.FC = () => {
     <SectionLayout
       extraComponents={
         <div className="flex flex-col items-center gap-2">
-          <p className="w-full text-left text-lg font-semibold italic text-slate-500 lg:text-xl">
-            Who is Speak and Spell?
+          <p className="w-full text-left text-lg font-semibold italic text-Sunglow lg:text-xl">
+            About Us
           </p>
           <p className="text-justify text-sm text-gray-600 lg:text-lg">
             We are an academy committed to ensuring that each student's English
@@ -32,4 +32,3 @@ const AboutUsComponent: React.FC = () => {
   );
 };
 export default AboutUsComponent;
-/* With small class sizes, personalised lessons, and engaging activities, we create a conducive environment for effective learning and provide an accessible platform, where the learners feel empowered to actively participate in the learning process and master their communication skills. */

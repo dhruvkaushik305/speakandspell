@@ -20,8 +20,8 @@ const NavbarLayout: React.FC = () => {
     <div className="fixed z-50 flex h-[4rem] w-full items-center justify-between border-b border-slate-200 bg-Primary p-2 lg:justify-around">
       <Link to="/">
         <div className="flex flex-col items-start p-1 font-Roboto text-xl font-semibold leading-6 text-gray-700 xl:text-2xl xl:leading-6">
-          <p>Speak</p>
-          <p>& Spell Academy</p>
+          <p>Speak & Spell</p>
+          <p>Academy</p>
         </div>
       </Link>
       <nav className="hidden gap-4 md:flex lg:text-lg">

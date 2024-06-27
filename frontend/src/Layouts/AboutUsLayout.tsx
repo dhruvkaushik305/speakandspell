@@ -1,7 +1,6 @@
 import React from "react";
 import SectionLayout from "../Components/HomePage/SectionLayout";
 import building from "../assets/building.svg";
-import teacher from "../assets/teacher.svg";
 import { motion } from "framer-motion";
 const AboutUsLayout: React.FC = () => {
   return (
@@ -14,8 +13,8 @@ const AboutUsLayout: React.FC = () => {
             transition={{ duration: 1 }}
             className="flex flex-col items-start gap-2"
           >
-            <h1 className="text-xl font-semibold italic text-gray-600 sm:text-2xl">
-              Who are we?
+            <h1 className="text-xl font-semibold italic text-Sunglow sm:text-2xl">
+              About Us
             </h1>
             <div className="flex flex-col items-center gap-2 lg:flex-row">
               <img
@@ -23,7 +22,7 @@ const AboutUsLayout: React.FC = () => {
                 alt="building"
                 className="size-52 sm:size-72"
               />
-              <p className="text-md p-4 text-gray-600 sm:text-lg lg:text-xl">
+              <p className="text-md p-4 text-justify text-gray-600 sm:text-lg lg:text-xl">
                 Speak & Spell Academy is an independent English language school
                 based in Hisar, Haryana. Established in 2023, although still in
                 its early years, our academy is driven by the extensive
@@ -57,19 +56,16 @@ const AboutUsLayout: React.FC = () => {
             transition={{ duration: 1 }}
             className="flex flex-col items-start gap-2"
           >
-            <h1 className="text-xl font-semibold italic text-gray-600 sm:text-2xl">
-              Our Faculty
+            <h1 className="text-xl font-semibold italic text-Sunglow sm:text-2xl">
+              About The Mentor
             </h1>
-            <div className="flex flex-col items-center gap-2 lg:flex-row-reverse">
-              <img src={teacher} alt="teacher" className="size-52 sm:size-72" />
-              <p className="text-md p-4 text-gray-600 sm:text-lg lg:text-xl">
-                With over 19 years of combined experience in teaching and web
-                content development, I provide comprehensive and effective
-                English training services designed to meet the unique needs of
-                each learner. My love for writing, reading, painting, and
-                travelling enriches my dynamic and engaging teaching approach.
-              </p>
-            </div>
+            <p className="text-md p-4 text-justify text-gray-600 sm:text-lg lg:text-xl">
+              With over 19 years of combined experience in teaching and web
+              content development, I provide comprehensive and effective English
+              training services designed to meet the unique needs of each
+              learner. My love for writing, reading, painting, and travelling
+              enriches my dynamic and engaging teaching approach.
+            </p>
           </motion.div>
         }
       />
