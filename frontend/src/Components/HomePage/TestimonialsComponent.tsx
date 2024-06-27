@@ -79,7 +79,7 @@ const TestimonialsComponent: React.FC = () => {
     <SectionLayout
       extraComponents={
         <div className="mx-auto flex flex-col items-center gap-4 md:max-w-[90%] xl:max-w-[80%]">
-          <h1 className="w-full text-left text-lg font-semibold italic text-Sunglow lg:text-xl">
+          <h1 className="w-full text-left text-lg font-semibold italic text-gray-600 lg:text-xl">
             What Our Students Say
           </h1>
           <div className="flex items-center justify-center gap-2">

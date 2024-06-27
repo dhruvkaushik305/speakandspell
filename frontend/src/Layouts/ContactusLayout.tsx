@@ -24,7 +24,7 @@ const ContactusLayout: React.FC = () => {
       className="mx-auto flex h-full max-w-[95%] flex-col items-center justify-center gap-5 md:max-w-[90%]"
     >
       <div className="flex flex-col items-center justify-center gap-3">
-        <h1 className="text-2xl font-bold text-Sunglow md:text-3xl lg:text-4xl">
+        <h1 className="text-2xl font-bold text-gray-600 md:text-3xl lg:text-4xl">
           Contact Us
         </h1>
         <h2 className="text-center text-lg italic text-gray-600 md:text-xl">

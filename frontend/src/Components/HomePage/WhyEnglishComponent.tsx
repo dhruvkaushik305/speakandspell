@@ -12,7 +12,7 @@ const WhyEnglishComponent: React.FC = () => {
             className="size-56 xl:size-64"
           />
           <div className="p-1">
-            <p className="text-left text-lg font-semibold italic text-Sunglow lg:text-xl">
+            <p className="text-left text-lg font-semibold italic text-gray-600 lg:text-xl">
               Empower yourself with English
             </p>
             <p className="text-justify text-sm text-gray-600 lg:text-lg">

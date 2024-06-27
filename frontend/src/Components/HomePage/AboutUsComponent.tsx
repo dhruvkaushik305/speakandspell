@@ -6,7 +6,7 @@ const AboutUsComponent: React.FC = () => {
     <SectionLayout
       extraComponents={
         <div className="flex flex-col items-center gap-2">
-          <p className="w-full text-left text-lg font-semibold italic text-Sunglow lg:text-xl">
+          <p className="w-full text-left text-lg font-semibold italic text-gray-600 lg:text-xl">
             About Us
           </p>
           <p className="text-justify text-sm text-gray-600 lg:text-lg">
