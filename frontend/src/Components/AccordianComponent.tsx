@@ -15,12 +15,12 @@ const AccordianComponent: React.FC<AccordianComponentProps> = ({
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex flex-col p-1 md:p-2">
+    <div className="flex flex-col p-1 text-gray-600 md:p-2">
       <div
         className="flex grow cursor-pointer items-center justify-between"
         onClick={toggleIsOpen}
       >
-        <p className="w-screen p-2 text-lg font-semibold md:text-xl">{title}</p>
+        <p className="text-md w-screen p-2 font-semibold md:text-lg">{title}</p>
         <img
           src={isOpen ? upArrow : downArrow}
           alt="open/close arrow"
@@ -33,7 +33,7 @@ const AccordianComponent: React.FC<AccordianComponentProps> = ({
         transition={{ height: { duration: 0.2 }, opacity: { duration: 0.2 } }}
         className="overflow-hidden"
       >
-        <p className="text-md p-2 md:text-lg">{content}</p>
+        <p className="md:text-md p-2 text-sm">{content}</p>
       </motion.div>
     </div>
   );

@@ -17,7 +17,14 @@ function App() {
           <Route path="/aboutus" element={<AboutUsLayout />} />
           <Route path="/faq" element={<FaqLayout />} />
           <Route path="/courses/*" element={<CoursesLayout />} />
-          <Route path="/blogs/*" element={<h1>Blogs</h1>} />
+          <Route
+            path="/blogs/*"
+            element={
+              <h1 className="flex h-screen items-center justify-center">
+                Blogs
+              </h1>
+            }
+          />
           <Route path="/contactus" element={<ContactusLayout />} />
           <Route path="*" element={<NotFoundLayout />} />
         </Routes>
