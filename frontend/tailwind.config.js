@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
+        Playwrite: ["Playwrite GB S", "sans-serif"],
       },
       colors: {
         CelticBlue: "#226CE0",

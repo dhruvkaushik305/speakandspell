@@ -1,11 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
 const BannerComponent: React.FC = () => {
   return (
-    <div className="flex h-[30rem] w-full items-end justify-center bg-studentsOnTable bg-cover bg-top">
-      <div className="w-full bg-black/45 p-3 text-center font-Roboto text-2xl text-Primary/80 backdrop-blur-2xl lg:text-3xl xl:text-4xl">
-        Your transformative journey towards{" "}
-        <span className="italic">confident communication</span> begins here.
-      </div>
+    <div className="flex w-full flex-col items-center">
+      <div className="flex h-[12rem] w-full bg-studentsOnTable bg-cover bg-top sm:h-[16rem] md:h-[20rem] lg:h-[30rem]"></div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3 }}
+        className="w-ful font-Playwrite p-3 text-center text-2xl font-semibold italic md:text-3xl lg:text-4xl"
+      >
+        Confident communication starts here.
+      </motion.div>
     </div>
   );
 };
