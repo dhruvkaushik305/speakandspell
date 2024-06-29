@@ -1,5 +1,12 @@
+import Tiptap from "./Tiptap";
 function App() {
-  return <div className="bg-red-200">Good to see you!</div>;
+  return (
+    <>
+      <div className="flex h-screen flex-col items-center justify-center gap-5">
+        <Tiptap />
+      </div>
+    </>
+  );
 }
 
 export default App;
