@@ -1,7 +1,7 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
-import React from "react";
+import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import {
   BsBlockquoteRight,
@@ -11,6 +11,10 @@ import {
 } from "react-icons/bs";
 import { CiLink } from "react-icons/ci";
 import {
+  LuAlignCenter,
+  LuAlignJustify,
+  LuAlignLeft,
+  LuAlignRight,
   LuBold,
   LuHeading1,
   LuHeading2,
@@ -25,6 +29,17 @@ import Heading from "@tiptap/extension-heading";
 import { GoHorizontalRule, GoListOrdered } from "react-icons/go";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
 import OrderedList from "@tiptap/extension-ordered-list";
+import Bold from "@tiptap/extension-bold";
+import Italic from "@tiptap/extension-italic";
+import Underline from "@tiptap/extension-underline";
+import Link from "@tiptap/extension-link";
+import Strike from "@tiptap/extension-strike";
+import Superscript from "@tiptap/extension-superscript";
+import Subscript from "@tiptap/extension-subscript";
+import TextStyle from "@tiptap/extension-text-style";
+import Color from "@tiptap/extension-color";
+import TextAlign from "@tiptap/extension-text-align";
+
 type formInputs = {
   title: string;
   content: string;
@@ -37,7 +52,19 @@ const CreateBlogLayout: React.FC = () => {
       BulletList,
       OrderedList,
       HorizontalRule,
+      Bold,
+      Italic,
+      Underline,
+      Link,
+      Strike,
+      Superscript,
+      Subscript,
+      TextStyle,
+      Color,
       Heading.configure({ levels: [1, 2, 3] }),
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
       Placeholder.configure({ placeholder: "Write your blog here..." }),
     ],
     editorProps: {
@@ -47,6 +74,31 @@ const CreateBlogLayout: React.FC = () => {
       },
     },
   });
+  const setLink = useCallback(() => {
+    const previousUrl = editor?.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === "") {
+      editor?.chain().focus().extendMarkRange("link").unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor
+      ?.chain()
+      .focus()
+      .extendMarkRange("link")
+      .setLink({ href: url })
+      .run();
+  }, [editor]);
+
   const { register, handleSubmit } = useForm<formInputs>();
   if (!editor) return null;
   return (
@@ -77,6 +129,18 @@ const CreateBlogLayout: React.FC = () => {
           <div>
             <header className="text-xl font-medium">Content</header>
             <div className="ml-auto flex w-1/2 items-center justify-around gap-2 p-2">
+              <input
+                type="color"
+                className="h-7 w-7 rounded-sm p-[1px]"
+                onInput={(event) =>
+                  editor
+                    .chain()
+                    .focus()
+                    .setColor((event.target as HTMLInputElement).value)
+                    .run()
+                }
+                value={editor.getAttributes("textStyle").color}
+              />
               <BsBlockquoteRight
                 className={`size-6 cursor-pointer ${editor?.isActive("blockquote") ? "text-black" : "text-gray-300"}`}
                 onClick={() => editor?.chain().focus().toggleBlockquote().run()}
@@ -108,16 +172,61 @@ const CreateBlogLayout: React.FC = () => {
                 }
               />
               <GoHorizontalRule
-                className={`size-6 cursor-pointer ${editor?.isActive("horizontalRule", { level: 3 }) ? "text-black" : "text-gray-300"}`}
+                className={`size-6 cursor-pointer ${editor?.isActive("horizontalRule") ? "text-black" : "text-gray-300"}`}
                 onClick={() => editor.chain().focus().setHorizontalRule().run()}
               />
-              <LuBold />
-              <BsTypeUnderline />
-              <BsTypeItalic />
-              <BsTypeStrikethrough />
-              <CiLink />
-              <LuSubscript />
-              <LuSuperscript />
+              <LuBold
+                onClick={() => editor.chain().focus().toggleBold().run()}
+                className={`size-6 cursor-pointer ${editor?.isActive("bold") ? "text-black" : "text-gray-300"}`}
+              />
+              <BsTypeUnderline
+                onClick={() => editor.chain().focus().toggleUnderline().run()}
+                className={`size-6 cursor-pointer ${editor?.isActive("underline") ? "text-black" : "text-gray-300"}`}
+              />
+              <BsTypeItalic
+                onClick={() => editor.chain().focus().toggleItalic().run()}
+                className={`size-6 cursor-pointer ${editor?.isActive("italic") ? "text-black" : "text-gray-300"}`}
+              />
+              <BsTypeStrikethrough
+                onClick={() => editor.chain().focus().toggleStrike().run()}
+                className={`size-6 cursor-pointer ${editor?.isActive("strike") ? "text-black" : "text-gray-300"}`}
+              />
+              <LuAlignLeft
+                onClick={() =>
+                  editor.chain().focus().setTextAlign("left").run()
+                }
+                className={`size-6 cursor-pointer ${editor?.isActive({ textAlign: "left" }) ? "text-black" : "text-gray-300"}`}
+              />
+              <LuAlignCenter
+                onClick={() =>
+                  editor.chain().focus().setTextAlign("center").run()
+                }
+                className={`size-6 cursor-pointer ${editor?.isActive({ textAlign: "center" }) ? "text-black" : "text-gray-300"}`}
+              />
+              <LuAlignRight
+                onClick={() =>
+                  editor.chain().focus().setTextAlign("right").run()
+                }
+                className={`size-6 cursor-pointer ${editor?.isActive({ textAlign: "right" }) ? "text-black" : "text-gray-300"}`}
+              />
+              <LuAlignJustify
+                onClick={() =>
+                  editor.chain().focus().setTextAlign("justify").run()
+                }
+                className={`size-6 cursor-pointer ${editor?.isActive({ textAlign: "justify" }) ? "text-black" : "text-gray-300"}`}
+              />
+              <CiLink
+                onClick={setLink}
+                className={`size-6 cursor-pointer ${editor?.isActive("strike") ? "text-black" : "text-gray-300"}`}
+              />
+              <LuSubscript
+                onClick={() => editor.chain().focus().toggleSubscript().run()}
+                className={`size-6 cursor-pointer ${editor?.isActive("subscript") ? "text-black" : "text-gray-300"}`}
+              />
+              <LuSuperscript
+                onClick={() => editor.chain().focus().toggleSuperscript().run()}
+                className={`size-6 cursor-pointer ${editor?.isActive("superscript") ? "text-black" : "text-gray-300"}`}
+              />
             </div>
             <EditorContent editor={editor} />
           </div>

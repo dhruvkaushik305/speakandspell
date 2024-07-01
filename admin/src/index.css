@@ -57,4 +57,11 @@
     cursor: pointer;
     margin: 2rem 0;
   }
+  a {
+    color: #86198f;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
