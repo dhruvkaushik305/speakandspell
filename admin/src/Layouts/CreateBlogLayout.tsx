@@ -1,8 +1,7 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
-import React, { useCallback } from "react";
-import { useForm } from "react-hook-form";
+import React, { useCallback, useRef } from "react";
 import {
   BsBlockquoteRight,
   BsTypeItalic,
@@ -32,10 +31,6 @@ import TextStyle from "@tiptap/extension-text-style";
 import Color from "@tiptap/extension-color";
 import TextAlign from "@tiptap/extension-text-align";
 
-type formInputs = {
-  title: string;
-  content: string;
-};
 const CreateBlogLayout: React.FC = () => {
   const editor = useEditor({
     extensions: [
@@ -82,30 +77,23 @@ const CreateBlogLayout: React.FC = () => {
       .setLink({ href: url })
       .run();
   }, [editor]);
-
-  const { register, handleSubmit } = useForm<formInputs>();
+  const titleRef = useRef<HTMLInputElement>(null);
   if (!editor) return null;
   return (
     <div className="flex h-full flex-col items-center justify-center gap-5">
       <header className="w-full p-2 text-left text-2xl font-bold md:text-3xl">
         Create Blog Post
       </header>
-      <form
-        className="flex w-full flex-col gap-5 rounded-lg p-3 md:p-4"
-        onSubmit={handleSubmit((data) => console.log(data))}
-      >
+      <div className="flex w-full flex-col gap-5 rounded-lg p-3 md:p-4">
         <div className="flex flex-col gap-1">
-          <label
-            htmlFor="title"
-            {...register("title")}
-            className="text-xl font-medium"
-          >
+          <label htmlFor="title" className="text-xl font-medium">
             Title
           </label>
           <input
             type="text"
             id="title"
             placeholder="What is your blog about?"
+            ref={titleRef}
             className="rounded-lg border border-gray-200 p-2 focus:outline-none"
           />
         </div>
@@ -215,8 +203,15 @@ const CreateBlogLayout: React.FC = () => {
             <EditorContent editor={editor} />
           </div>
         </div>
-      </form>
-      <button className="w-[20%] min-w-[8rem] rounded-lg bg-gray-700 px-4 py-2 text-center text-white">
+      </div>
+      <button
+        type="submit"
+        className="w-[20%] min-w-[8rem] rounded-lg bg-gray-700 px-4 py-2 text-center text-white"
+        onClick={() => {
+          console.log(titleRef.current?.value);
+          console.log(editor.getHTML());
+        }}
+      >
         Publish
       </button>
     </div>
