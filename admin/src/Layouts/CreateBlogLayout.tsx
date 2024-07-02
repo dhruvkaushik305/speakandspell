@@ -22,18 +22,10 @@ import {
   LuSubscript,
   LuSuperscript,
 } from "react-icons/lu";
-import Blockquote from "@tiptap/extension-blockquote";
 import { PiListBulletsThin } from "react-icons/pi";
-import BulletList from "@tiptap/extension-bullet-list";
-import Heading from "@tiptap/extension-heading";
 import { GoHorizontalRule, GoListOrdered } from "react-icons/go";
-import HorizontalRule from "@tiptap/extension-horizontal-rule";
-import OrderedList from "@tiptap/extension-ordered-list";
-import Bold from "@tiptap/extension-bold";
-import Italic from "@tiptap/extension-italic";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
-import Strike from "@tiptap/extension-strike";
 import Superscript from "@tiptap/extension-superscript";
 import Subscript from "@tiptap/extension-subscript";
 import TextStyle from "@tiptap/extension-text-style";
@@ -47,21 +39,13 @@ type formInputs = {
 const CreateBlogLayout: React.FC = () => {
   const editor = useEditor({
     extensions: [
-      Blockquote,
       StarterKit,
-      BulletList,
-      OrderedList,
-      HorizontalRule,
-      Bold,
-      Italic,
       Underline,
       Link,
-      Strike,
       Superscript,
       Subscript,
       TextStyle,
       Color,
-      Heading.configure({ levels: [1, 2, 3] }),
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
