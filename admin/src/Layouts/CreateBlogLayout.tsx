@@ -103,11 +103,11 @@ const CreateBlogLayout: React.FC = () => {
   if (!editor) return null;
   return (
     <div className="flex h-full flex-col items-center justify-center gap-5">
-      <header className="w-full p-2 text-left text-4xl font-bold">
+      <header className="w-full p-2 text-left text-2xl font-bold md:text-3xl">
         Create Blog Post
       </header>
       <form
-        className="flex w-full flex-col gap-5 rounded-lg p-4"
+        className="flex w-full flex-col gap-5 rounded-lg p-3 md:p-4"
         onSubmit={handleSubmit((data) => console.log(data))}
       >
         <div className="flex flex-col gap-1">
@@ -128,7 +128,7 @@ const CreateBlogLayout: React.FC = () => {
         <div className="flex flex-col gap-1">
           <div>
             <header className="text-xl font-medium">Content</header>
-            <div className="ml-auto flex w-1/2 items-center justify-around gap-2 p-2">
+            <div className="flex w-full items-center justify-around gap-2 p-2 lg:ml-auto lg:w-1/2">
               <input
                 type="color"
                 className="h-7 w-7 rounded-sm p-[1px]"
@@ -232,7 +232,7 @@ const CreateBlogLayout: React.FC = () => {
           </div>
         </div>
       </form>
-      <button className="w-[20%] rounded-lg bg-gray-700 px-4 py-2 text-white">
+      <button className="w-[20%] min-w-[8rem] rounded-lg bg-gray-700 px-4 py-2 text-center text-white">
         Publish
       </button>
     </div>
